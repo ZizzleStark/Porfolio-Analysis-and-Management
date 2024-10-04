@@ -37,11 +37,17 @@ public class User {
     @Column(name = "income")
     private double income;
 
-    @Column(name = "savings")
-    private double savings;
+    @Column(name = "savings_percentage")
+    private double savingsPercentage; // Savings as a percentage
+
+    @Column(name = "dependants")
+    private int dependants; // New field for number of dependants
 
     @Column(name = "debt")
     private double debt;
+
+    @Column(name = "emergency_fund")
+    private double emergencyFund; // New field for emergency fund
 
     @Column(name = "investment_horizon")
     private int investmentHorizon;
@@ -50,7 +56,7 @@ public class User {
     private String reactionToLoss;
 
     @Column(name = "risk_appetite")
-    private String riskAppetite;
+    private double riskAppetite;
 
     @Column(name = "created_date")
     private Date createdDate;

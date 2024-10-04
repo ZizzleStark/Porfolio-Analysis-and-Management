@@ -1,9 +1,9 @@
 package com.FinAnalytics.Backend.repository;
 
-import com.FinAnalytics.Backend.models.Questionnaire;
+import com.FinAnalytics.Backend.models.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface QuestionnaireRepository extends JpaRepository<Questionnaire, Long> {
+public interface QuestionRepository extends JpaRepository<Question, Long> {
 }

@@ -5,10 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import jakarta.persistence.Column;
-
-import java.util.Date;
-import java.util.UUID;
 import java.util.List;
 
 @Entity
@@ -20,22 +16,8 @@ public class Questionnaire {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "questionnaire_id")
-    private Long questionnaireId;
+    private Long id;
 
-    @Column(name = "user_id")
-    private Long userId;
-
-    @ElementCollection
-    @CollectionTable(name = "questions", joinColumns = @JoinColumn(name = "questionnaire_id"))
-    @Column(name = "question")
-    private List<String> questions;
-
-    @ElementCollection
-    @CollectionTable(name = "answers", joinColumns = @JoinColumn(name = "questionnaire_id"))
-    @Column(name = "answer")
-    private List<String> answers;
-
-    @Column(name = "risk_score")
-    private double riskScore;
+    @OneToMany(mappedBy = "questionnaire", cascade = CascadeType.ALL)
+    private List<Question> questions;
 }

@@ -16,10 +16,9 @@ import java.util.UUID;
 public class InvestmentPortfolio {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "InvestmentPortfolioSequenceGenerator")
-    @SequenceGenerator(name = "InvestmentPortfolioSequenceGenerator",allocationSize = 1, initialValue = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "portfolio_id")
-    private int  portfolioId;
+    private Long  portfolioId;
 
     @Column(name = "user_id")
     private int userId;

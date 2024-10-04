@@ -9,7 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-import java.util.UUID;
+
 
 @Entity
 @Table(name = "users")
@@ -17,10 +17,11 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private UUID userId;
+    private Long userId;
 
     @Column(name = "name")
     private String name;
@@ -38,16 +39,16 @@ public class User {
     private double income;
 
     @Column(name = "savings_percentage")
-    private double savingsPercentage; // Savings as a percentage
+    private double savingsPercentage;
 
     @Column(name = "dependants")
-    private int dependants; // New field for number of dependants
+    private int dependants;
 
     @Column(name = "debt")
     private double debt;
 
     @Column(name = "emergency_fund")
-    private double emergencyFund; // New field for emergency fund
+    private double emergencyFund;
 
     @Column(name = "investment_horizon")
     private int investmentHorizon;

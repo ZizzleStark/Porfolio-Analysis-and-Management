@@ -1,10 +1,10 @@
 package com.FinAnalytics.Backend.models;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import jakarta.persistence.*;
-import java.util.UUID;
 import java.util.Date;
 
 @Entity
@@ -15,9 +15,9 @@ import java.util.Date;
 public class RiskProfile {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "risk_profile_id")
-    private UUID riskProfileId;
+    private Long riskProfileId;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)

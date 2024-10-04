@@ -1,5 +1,3 @@
-// RiskProfileServiceImpl.java
-
 package com.FinAnalytics.Backend.service.impl;
 
 import com.FinAnalytics.Backend.models.RiskProfile;
@@ -25,14 +23,11 @@ public class RiskProfileServiceImpl implements RiskProfileService {
     public RiskProfile calculateRiskProfile(Long userId) {
         Optional<User> userOpt = userRepository.findById(userId);
         if (!userOpt.isPresent()) {
-            throw new RuntimeException("User not found");
+            throw new RuntimeException("User  not found");
         }
         User user = userOpt.get();
 
-
         double riskScore = 0;
-
-
 
         // Age factor (15% weight)
         if (user.getAge() < 30) {
@@ -109,9 +104,6 @@ public class RiskProfileServiceImpl implements RiskProfileService {
         } else {
             riskScore += 10;
         }
-
-
-
 
         String riskLevel;
         if (riskScore < 30) {

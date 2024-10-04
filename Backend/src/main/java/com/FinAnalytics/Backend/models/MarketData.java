@@ -16,10 +16,9 @@ import java.util.UUID;
 public class MarketData {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MarketDataSequenceGenerator")
-    @SequenceGenerator(name = "MarketDataSequenceGenerator",allocationSize = 1, initialValue = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "market_data_id")
-    private int marketDataId;
+    private Long marketDataId;
 
     @Column(name = "asset_type")
     private String assetType;

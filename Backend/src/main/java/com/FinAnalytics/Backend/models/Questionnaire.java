@@ -19,12 +19,12 @@ import java.util.List;
 public class Questionnaire {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "questionnaire_id")
-    private UUID questionnaireId;
+    private Long questionnaireId;
 
     @Column(name = "user_id")
-    private UUID userId;
+    private Long userId;
 
     @ElementCollection
     @CollectionTable(name = "questions", joinColumns = @JoinColumn(name = "questionnaire_id"))

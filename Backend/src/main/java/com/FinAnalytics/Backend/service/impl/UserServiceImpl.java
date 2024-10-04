@@ -1,4 +1,3 @@
-
 package com.FinAnalytics.Backend.service.impl;
 
 import com.FinAnalytics.Backend.models.User;
@@ -17,7 +16,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User registerUser(User user) {
-
         return userRepository.save(user);
     }
 

@@ -1,13 +1,16 @@
 package com.FinAnalytics.Backend.models;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import jakarta.persistence.*;
 import java.util.Date;
-import java.util.UUID;
+import java.util.List;
 
+
+@Builder
 @Entity
 @Table(name = "investment_portfolios")
 @Data
@@ -18,25 +21,22 @@ public class InvestmentPortfolio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "portfolio_id")
-    private Long  portfolioId;
+    private Long portfolioId;
 
     @Column(name = "user_id")
     private int userId;
 
-    @Column(name = "stocks_percentage")
-    private double stocksPercentage;
+    @Column(name = "grand_total")
+    private double grandTotal;
 
-    @Column(name = "bonds_percentage")
-    private double bondsPercentage;
+    @Column(name = "statement_period_from")
+    private String statementPeriodFrom;
 
-    @Column(name = "other_assets_percentage")
-    private double otherAssetsPercentage;
+    @Column(name = "statement_period_to")
+    private String statementPeriodTo;
 
-    @Column(name = "portfolio_value")
-    private double portfolioValue;
-
-    @Column(name = "risk_level")
-    private String riskLevel;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "investmentPortfolio")
+    private List<AccountInfo> accounts;
 
     @Column(name = "updated_date")
     private Date updatedDate;

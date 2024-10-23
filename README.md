@@ -45,13 +45,17 @@ The full system flow includes user authentication, portfolio fetching, risk prof
 
 The current development covers key entities like User, InvestmentPortfolio, MutualFund, and Equity. The backend architecture uses controllers, services, and repositories to handle these entities. Below is a diagram of the models and services implemented so far:
 
+
+MODELS
 <img width="845" alt="Screenshot 2024-10-23 at 11 28 37 PM" src="https://github.com/user-attachments/assets/2054ec5b-b1dd-479c-8ab4-0bdfbf2bcc18">
 
 
-<img width="906" alt="Screenshot 2024-10-23 at 11 29 16 PM" src="https://github.com/user-attachments/assets/5128bf84-69b4-40ab-952d-b24e7e62a6f4">
-
+RISK-PROFILE Service
 <img width="1003" alt="Screenshot 2024-10-23 at 11 29 05 PM" src="https://github.com/user-attachments/assets/3d804fe5-3e52-48df-b879-05e351bd231b">
 
+
+USER-PORTFOLIO Service
+<img width="906" alt="Screenshot 2024-10-23 at 11 29 16 PM" src="https://github.com/user-attachments/assets/5128bf84-69b4-40ab-952d-b24e7e62a6f4">
 
 
 
